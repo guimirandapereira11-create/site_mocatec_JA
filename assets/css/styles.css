@@ -1,0 +1,247 @@
+:root {
+    color-scheme: light;
+    --color-forest: #354b2a;
+    --color-olive: #687b3d;
+    --color-sage: #e7eadb;
+    --color-cream: #faf8f0;
+    --color-paper: #fffdf8;
+    --color-text: #303329;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-cream);
+    color: var(--color-text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.site-header,
+.site-footer {
+    padding: 1rem 5%;
+    background-color: var(--color-sage);
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid #d5dac5;
+}
+
+.site-logo {
+    color: var(--color-forest);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 0.35rem 0;
+    color: var(--color-forest);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--color-olive);
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+}
+
+main {
+    width: min(100% - 2rem, 70rem);
+    margin: 0 auto;
+}
+
+section {
+    padding: 1rem 0;
+}
+
+main > section:first-child {
+    padding-bottom: 0;
+}
+
+main > section:nth-child(2) {
+    padding-top: 0;
+}
+
+main > section:nth-child(2) h2 {
+    margin-top: 0;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 1.5rem;
+}
+
+.hero-text {
+    grid-column: span 2;
+}
+
+.hero-text h1 {
+    margin: 0;
+}
+
+.hero-logo img {
+    display: block;
+    width: 80%;
+    max-width: none;
+    margin-left: -15%;
+    height: auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    color: var(--color-forest);
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+}
+
+h2 {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--color-olive);
+    color: var(--color-forest);
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    line-height: 1.2;
+}
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: 1rem;
+}
+
+.projeto {
+    padding: 1.25rem;
+    border: 1px solid #e1e3d6;
+    border-radius: 0.75rem;
+    background-color: var(--color-paper);
+    box-shadow: 0 0.25rem 0.9rem rgb(53 75 42 / 8%);
+}
+
+.projeto h3 {
+    margin-top: 0;
+    color: var(--color-olive);
+}
+
+.back-to-menu {
+    display: block;
+    width: fit-content;
+    margin: 1rem auto 0;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid var(--color-forest);
+    border-radius: 999px;
+    background-color: var(--color-forest);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.back-to-menu:hover,
+.back-to-menu:focus-visible {
+    background-color: var(--color-olive);
+    transform: translateY(-1px);
+}
+
+.site-footer {
+    margin-top: 1rem;
+    color: var(--color-forest);
+    text-align: center;
+}
+
+@media (max-width: 56rem) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+        gap: 1rem;
+    }
+
+    .hero-text {
+        grid-column: auto;
+    }
+
+    .hero-logo img {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 40rem) {
+    .site-header,
+    .site-footer {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    nav ul {
+        gap: 0.25rem 0.75rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    main > section:first-child {
+        padding-top: 0.5rem;
+    }
+
+    .hero-logo img {
+        width: 100%;
+        max-width: 20rem;
+        margin: 0 auto;
+    }
+
+    .projeto {
+        padding: 1rem;
+    }
+
+    .site-footer p {
+        margin: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
