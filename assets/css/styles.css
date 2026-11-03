@@ -280,7 +280,7 @@ section li::marker {
 
     .projeto {
         padding: 1.2rem;
-    }
+        }
 }
 
 @media (prefers-reduced-motion: reduce) {
