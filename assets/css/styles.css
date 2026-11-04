@@ -154,6 +154,7 @@ h3 {
 
 p {
     margin: 0 0 1rem;
+    text-align: justify;
 }
 
 p:last-child {
